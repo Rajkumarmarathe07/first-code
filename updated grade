@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+#define NAME_LEN 50
+
+int main() {
+    char name[NAME_LEN];
+    int f, p, a, n, c;
+    int score;
+
+    // Instructions
+    printf("Welcome to the Survival Skills Grader!\n");
+    printf("Ready to find out if you can survive in the wild or if you'll just be a snack for the bears? Lets go!\n");
+
+    // Get user's name
+    printf("First things first, what should I call you? ");
+    scanf("%s", name);
+
+    // Get skill scores
+    printf("Enter your marks (0 to 20). Remember, honesty is the best policy, unless you're a bear!:\n");
+    printf("1. Starting a fire (No matches? You might want to reconsider your camping plans): ");
+    scanf("%d", &f);
+
+    if (f>20 || f<0)
+    {
+        printf("enter valid input");
+        return 0;
+    }
+    
+    printf("2. Identifying edible plants (Is that a salad or a death wish?): ");
+    scanf("%d", &p);
+
+     if (p>20 || p<0)
+    {
+        printf("enter valid input");
+        return 0;
+    }
+
+    printf("3. Basic first aid (Band-aids or witchcraft?): ");
+    scanf("%d", &a);
+
+     if (a>20 || a<0)
+    {
+        printf("enter valid input");
+        return 0;
+    }
+
+    printf("4. Navigation (If you get lost, just remember: follow the North Star, or the smell of pizza): ");
+    scanf("%d", &n);
+
+      if (n>20 || n<0)
+    {
+        printf("enter valid input");
+        return 0;
+    }
+
+    printf("5. Camping experience (Have you camped, or just slept in a tent in your backyard?): ");
+    scanf("%d", &c);
+
+ if (c>20 || c<0)
+    {
+        printf("enter valid input");
+        return 0;
+    }
+
+
+    // Calculate total score
+    score = f + p + a + n + c;
+
+    // Output the result
+    printf("\n%s, your total score: %d/100\n", name, score);
+
+    // Assign letter grades
+    char grade;
+    if (score >= 85) {
+        grade = 'A';
+        printf("Grade: %c. You're basically a survival ninja!\n", grade);
+    } else if (score >= 70) {
+        grade = 'B';
+        printf("Grade: %c. Good job! You're ready for a camping trip... as long as it's a luxury one!\n", grade);
+    } else if (score >= 50) {
+        grade = 'C';
+        printf("Grade: %c. Fair enough! You might survive if you stick close to the snacks!\n", grade);
+    } else if (score >= 30) {
+        grade = 'D';
+        printf("Grade: %c. Oof! Better brush up on those skills before your next adventure!\n", grade);
+    } else {
+        grade = 'F';
+        printf("Grade: %c. Uh-oh! Maybe stick to your couch and Netflix for now!\n", grade);
+    }
+
+    return 0;
+}
